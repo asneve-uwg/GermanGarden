@@ -72,6 +72,37 @@ label {
 }
 
 
+.layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+
+.intro {
+  flex: 1;
+}
+
+
+.vocab-box {
+  flex: 0 0 320px;
+  padding: 1rem;
+  border: 2px solid #3a6b35;
+  border-radius: 10px;
+  background-color: #f3f7f2;
+  margin-top:1.2em;
+}
+
+
+.vocab-box details {
+  margin-bottom: 0.75rem;
+}
+
+.vocab-box summary {
+  font-weight: bold;
+  cursor: pointer;
+
+
 input,
 textarea {
     margin-top: 10px;
