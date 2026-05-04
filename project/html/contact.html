@@ -6,6 +6,37 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="../css/project.css"
 </head>
+<script>
+
+
+function validateForm() {
+
+    var name = document.forms[0].name.value;
+    var isValidName = true;
+    var i;
+
+    if (name == "") {
+        alert("Name field cannot be empty.");
+        return false;
+    }
+    for (i = 0; i < name.length; i++) {
+        if (
+            (name[i] < "A" || name[i] > "Z") &&
+            (name[i] < "a" || name[i] > "z")
+        ) {
+            isValidName = false;
+        }
+    }
+
+    if (isValidName == false) {
+        alert("Name must contain only letters (no numbers or spaces).");
+        return false;
+    }
+
+    alert("All info is valid.");
+    return true;
+}
+</script>
 <div id="wrapper">
 <body>
 <header>
@@ -24,9 +55,10 @@
 
 <h1>Send Us Your Comments</h1>
 <p>Required fields are marked with an asterisk *</p>
-<form method="post" action="https://webdevbasics.net/scripts/demo.php">
-  <label for="myName">*Name:</label>
-  <input type="text" name="myName" id="myName" required placeholder="your first and last name">
+<form method="post" action="https://webdevbasics.net/scripts/demo.php"
+      onsubmit="return validateForm();">
+  <label for="name">*Name:</label>
+  <input type="text" name="name" id="name" required placeholder="your first and last name">
   <label for="myEmail">*E-mail:</label>
   <input type="text" name="myEmail" id="myEmail" required placeholder="you@yourdomain.com" >
 
